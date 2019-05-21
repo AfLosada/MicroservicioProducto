@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en" manifest="productoList.appcache">
+
+    <div>
+        <table class="table table-hover">
+            <thead>
+            {% for Producto in producto_list %}
+            <tr>
+                <td>{
+                        Producto.id_producto
+                    }
+                </td>
+                 <td>{
+                        Producto.nombre
+                    }
+                </td>
+                <td>
+                    {
+                        Producto.precio
+                    }
+                </td>
+                <td>
+                    {
+                        Producto.cantidad
+                    }
+                </td>
+            </tr>
+            {% endfor %}
+        </table>
+    </div>

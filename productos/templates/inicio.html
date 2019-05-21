@@ -1,0 +1,107 @@
+<html manifest="inicio.appcache">
+{% load static %}
+{% load pwa %}
+
+<head>
+    {% progressive_web_app_meta %}
+    <title>Feeds</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="utf-8">
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+        crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.3/js/bootstrap.min.js"
+        integrity="sha384-a5N7Y/aK3qNeh15eJKGWxsqtnX/wWdSZSKp+81YjTmS15nvnvxKHuzaWwXHDli+4"
+        crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.3/css/bootstrap.min.css"
+        integrity="sha384-Zug+QiDoJOrZ5t4lssLdxGhVrurbmBWopoEl+M6BdEfwnCJZtKxi1KgxUyJq13dy" crossorigin="anonymous">
+    <style type="text/css">
+        .dropdown-span {
+            text-align: center;
+            color: white;
+            background-color: #5bc0de;
+        }
+
+        span {
+            color: white;
+        }
+
+        .footer {
+            text-align: center;
+            position: absolute;
+            padding: 10px;
+            color: white;
+            width: 100%;
+            bottom: 0;
+        }
+
+        .alink {
+            text-decoration: none;
+            color: white;
+        }
+
+        .alink:hover {
+            text-decoration: none;
+            color: white;
+        }
+
+        #content {
+            padding-bottom: 5%;
+        }
+
+        html,
+        body {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+        }
+
+        .wrapper {
+            position: relative;
+            min-height: 100%;
+        }
+    </style>
+</head>
+<h1 style="text-align: center;">ATpos</h1>
+
+<body>
+    <div style="text-align: center;">
+        <form action='/productoCreate'>
+            <input type="submit" value="Crear Producto">
+        </form>
+        <br />
+        <br />
+        <form action='crearPuntoDeVenta'>
+            <input type="submit" value="Crear PuntoDeVenta">
+        </form>
+        <br />
+        <br />
+        <form action='comprar'>
+            <input type="submit" value="Comprar Productos">
+        </form>
+        <form action='/comprarFalso'>
+            <input type="submit" value="Comprar sin token">
+        </form>
+        <form action='/historial'>
+            <input type="submit" value="Historial Compras">
+        </form>
+        <form action='/productoList'>
+            <input type="submit" value="Cobros">
+        </form>
+        <br />
+        <br />
+        <a class="btn btn-primary btn-lg btn-login btn-block" href="/login/auth0">Log In</a>
+        <br />
+        <br />
+        <a class="btn btn-primary btn-lg btn-logout btn-block" href="/logout">Logout</a>
+        <br />
+        <br />
+        <img src="https://b.kisscc0.com/20180814/ske/kisscc0-cashier-cash-register-money-computer-animation-cashier-2-5b739c5f1a22f6.1281972515343033271071.png"
+            alt="Smiley face" width="500" height="500" />
+    </div>
+    <script type="text/javascript" src="{% static 'js/idb.js' %}"></script>
+    <script type="text/javascript" src="{% static 'js/idbop.js' %}"></script>
+</body>
